@@ -1,0 +1,90 @@
+DSA_assignment
+
+--Q1--
+from typing import List
+num = [2,7,11,15]
+target = 9
+
+def twoSum(nums: List[int], target: int) -> List[int]:
+    numToIndex = {}
+    for i in range(len(nums)):
+        if target - nums[i] in numToIndex:
+            return [numToIndex[target - nums[i]], i]
+        numToIndex[nums[i]] = i
+    return []
+
+ans = twoSum(num,target)
+print(ans)
+
+--Q2--
+
+def removeElement(self, nums, val):
+	while val in nums:
+            nums.remove(val)
+
+--Q3--
+
+def find_index(arr, n, K):
+    for i in range(n):
+        if arr[i] == K:
+            return i
+
+        elif arr[i] > K:
+            return i
+             
+    return n
+
+--Q4--
+
+
+digits = [1,2,3]
+def plusOne(digits):
+        digits=[str(i) for i in digits]
+        s=''.join(digits)
+        a=int(s)+1
+        l=list(str(a))
+        l=[int(i) for i in l]
+        return l
+ans  = plusOne(digits)
+print(ans)
+
+--Q5--
+
+def merge(self, nums1, m, nums2, n):
+      for j in range(n):
+          nums1[m+j] = nums2[j]
+      nums1.sort()
+
+--Q6--
+
+def Duplicate(self, nums):
+    hset = set()
+    for idx in nums:
+        if idx in hset:
+            return True
+        else:
+            hset.add(idx)
+
+--Q7--
+
+def Zeroes(self, nums):
+    n = len(nums)
+    for i in range(0, n):
+        if nums[i] == 0:
+            nums.remove(nums[i])
+            nums.append(0)
+    return nums
+
+--Q8--
+
+from collections import Counter
+
+def findErrorNums(self, nums):
+    a, b = None, None
+    l = Counter(nums)
+    for i in range(1, len(nums) + 1):
+        if i not in l:
+            a = i
+        if l[i] > 1:
+            b = i
+    return [b, a]
